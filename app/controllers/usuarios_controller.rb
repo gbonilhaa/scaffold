@@ -72,7 +72,7 @@ class UsuariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
-      params.require(:usuario).permit(:nome, :email, :password, :password_confirmation, :endereco, :admin, :data_nasc)
+     params.require(:cadastro).permit(:nome, :email, :password, :password_confirmation, :endereco, :admin, :data_nasc)
     end
 
     
