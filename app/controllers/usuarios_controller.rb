@@ -10,6 +10,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios/1
   # GET /usuarios/1.json
   def show
+    render text: 'Acesso Negado' unless logado?
   end
 
   # GET /usuarios/new
@@ -72,7 +73,7 @@ class UsuariosController < ApplicationController
     def usuario_params
       params.require(:usuario).permit(:nome, :email, :password, :password_confirmation, :endereco, :admin, :data_nasc)
     end
-    
+
     def logado?
        false
     end
