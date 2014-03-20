@@ -5,7 +5,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios.json
   def index
     @usuarios = Usuario.all
-    session[:logado] = ! session[:logado]
+    
   end
 
   # GET /usuarios/1
