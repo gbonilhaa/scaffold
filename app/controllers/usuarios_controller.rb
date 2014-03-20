@@ -75,14 +75,5 @@ class UsuariosController < ApplicationController
       params.require(:usuario).permit(:nome, :email, :password, :password_confirmation, :endereco, :admin, :data_nasc)
     end
 
-    def logado?
-       
-       session[:logado].present?
-    end
-
-    def acesso_restrito!
-        return true if logado?
-        render text: 'Acesso Negado'
-        return false
-    end
+    
 end
