@@ -5,7 +5,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios.json
   def index
     @usuarios = Usuario.all
-    
+
   end
 
   # GET /usuarios/1
@@ -76,11 +76,12 @@ class UsuariosController < ApplicationController
     end
 
     def logado?
-       false
+       
        session[:logado].present?
     end
 
     def acesso_restrito!
+        return true if logado?
         render text: 'Acesso Negado'
         return false
     end

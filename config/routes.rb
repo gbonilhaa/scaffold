@@ -1,7 +1,7 @@
 Scaffold::Application.routes.draw do
   resources :usuarios
-  resource  :session, only: [:create, :destroy]
-  get 'login' => 'sessions#create'
+  resource  :session, only: [:new, :create, :destroy]
+  get 'login' => 'sessions#new'
   get 'logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
