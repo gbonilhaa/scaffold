@@ -10,7 +10,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios/1
   # GET /usuarios/1.json
   def show
-    render text: 'Acesso Negado' unless logado?
+    acesso_restrito!
   end
 
   # GET /usuarios/new
@@ -20,7 +20,7 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/1/edit
   def edit
-    render text: 'Acesso Negado' unless logado?
+    acesso_restrito!
   end
 
   # POST /usuarios
@@ -76,5 +76,9 @@ class UsuariosController < ApplicationController
 
     def logado?
        false
+    end
+
+    def acesso_restrito!
+       render text: 'Acesso Negado' unless logado?
     end
 end
