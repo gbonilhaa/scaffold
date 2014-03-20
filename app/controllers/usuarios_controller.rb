@@ -19,6 +19,7 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/1/edit
   def edit
+    render text: 'Acesso Negado' unless logado?
   end
 
   # POST /usuarios
@@ -70,5 +71,9 @@ class UsuariosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
       params.require(:usuario).permit(:nome, :email, :password, :password_confirmation, :endereco, :admin, :data_nasc)
+    end
+    
+    def logado?
+       false
     end
 end

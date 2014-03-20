@@ -26,7 +26,7 @@
         <td><%= usuario.data_nasc %></td>
         <td><%= link_to 'Show', usuario %></td>
         <td><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Remover', usuario, method: :delete, data: { confirm: 'você tem certeza?' } %></td>
+        <td><%= link_to 'Remover', usuario, method: :delete, data: { confirm: 'você tem certeza que deseja remover este usuário ?' } %></td>
       </tr>
     <% end %>
   </tbody>
